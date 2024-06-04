@@ -16,4 +16,15 @@ APPROVED_JOBS = [
 ]
 
 class Person:
-    pass
+    
+    def __init__( self, name = "Nameless", job = "Influencer" ) :
+        if ( type(name) == str )and ( 0 < len(name) <= 25 ) :
+            self.name = name.title()
+
+            if job in APPROVED_JOBS :
+                self.job = job
+            else :
+                print ( "Job must be in list of approved jobs." )
+
+        else :
+            print ( "Name must be string between 1 and 25 characters." )
